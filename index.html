@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GIMNART — Equipamiento para Gimnasia Artística y Deportiva</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gblue: #1A3A5C;
+  --gblue-dark: #0D2540;
+  --gorange: #E8662A;
+  --gorange-light: #FFF3EC;
+  --gorange-dark: #C4501A;
+  --gneutral: #F6F5F2;
+  --gtext: #1A1A1A;
+  --gtext-mid: #555;
+  --gtext-light: #888;
+  --gwhite: #FFFFFF;
+  --gborder: #e8e8e8;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body, html { font-family: 'DM Sans', sans-serif; color: var(--gtext); background: var(--gwhite); }
+
+/* ===== TOPBAR ===== */
+.topbar { background: var(--gblue); color: #fff; font-size: 12px; padding: 6px 40px; display: flex; align-items: center; justify-content: space-between; letter-spacing: 0.5px; }
+.topbar-text { opacity: 0.85; }
+.topbar-social { display: flex; gap: 14px; align-items: center; }
+.topbar-social a { color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.2s; display: flex; align-items: center; }
+.topbar-social a:hover { color: var(--gorange); }
+.social-svg { width: 15px; height: 15px; fill: currentColor; }
+
+/* ===== NAVBAR ===== */
+.navbar { background: var(--gwhite); border-bottom: 1px solid #e5e5e5; padding: 0 40px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
+.logo-area { display: flex; align-items: center; gap: 12px; }
+.logo-mark { width: 44px; height: 44px; background: var(--gorange); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #fff; font-family: 'Bebas Neue', sans-serif; font-size: 26px; }
+.logo-text { font-family: 'Bebas Neue', sans-serif; font-size: 28px; color: var(--gblue); letter-spacing: 2px; }
+.logo-sub { font-size: 10px; color: var(--gtext-mid); letter-spacing: 1.5px; text-transform: uppercase; margin-top: -4px; }
+.nav-links { display: flex; gap: 28px; align-items: center; }
+.nav-links a { text-decoration: none; color: var(--gtext); font-size: 14px; font-weight: 500; padding: 6px 0; border-bottom: 2px solid transparent; transition: all 0.2s; }
+.nav-links a:hover { color: var(--gorange); border-bottom-color: var(--gorange); }
+.nav-links a.active { color: var(--gorange); border-bottom-color: var(--gorange); }
+.nav-cta { background: var(--gorange); color: #fff; border: none; padding: 10px 22px; border-radius: 6px; font-size: 13px; font-weight: 700; cursor: pointer; font-family: 'DM Sans', sans-serif; letter-spacing: 0.5px; }
+
+/* ===== HERO ===== */
+.hero { background: linear-gradient(135deg, var(--gblue) 0%, var(--gblue-dark) 100%); display: flex; align-items: stretch; min-height: 460px; position: relative; overflow: hidden; }
+.hero::after { content: ''; position: absolute; right: -100px; top: -100px; width: 450px; height: 450px; border-radius: 50%; background: var(--gorange); opacity: 0.05; }
+.hero-content { flex: 1; z-index: 1; display: flex; flex-direction: column; justify-content: center; padding: 60px 40px; }
+.hero-badge { display: inline-block; width: fit-content; background: rgba(232,102,42,0.15); color: var(--gorange); font-size: 12px; font-weight: 700; padding: 6px 14px; border-radius: 20px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; }
+.hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: 48px; color: #fff; letter-spacing: 2px; line-height: 1.1; margin-bottom: 16px; }
+.hero h1 span { color: var(--gorange); }
+.hero p { color: rgba(255,255,255,0.7); font-size: 15px; line-height: 1.6; max-width: 460px; margin-bottom: 28px; }
+.hero-buttons { display: flex; gap: 12px; }
+.btn-primary { background: var(--gorange); color: #fff; border: none; padding: 14px 28px; border-radius: 6px; font-size: 14px; font-weight: 700; cursor: pointer; font-family: 'DM Sans', sans-serif; }
+.btn-secondary { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.3); padding: 14px 28px; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: 'DM Sans', sans-serif; }
+
+/* ===== CAROUSEL ===== */
+.hero-carousel { flex: 0 0 52%; z-index: 1; position: relative; overflow: hidden; }
+.carousel-track { display: flex; height: 100%; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+.carousel-slide { min-width: 100%; height: 100%; display: flex; align-items: stretch; }
+.carousel-slide-inner { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; position: relative; }
+.slide-bg-1 { background: linear-gradient(145deg, #1E3D5E 0%, #152D45 100%); }
+.slide-bg-2 { background: linear-gradient(145deg, #3A2210 0%, #5C3A1A 100%); }
+.slide-bg-3 { background: linear-gradient(145deg, #1A4030 0%, #2A5A42 100%); }
+.slide-bg-4 { background: linear-gradient(145deg, #3A1A3A 0%, #5A2A5A 100%); }
+.slide-bg-5 { background: linear-gradient(145deg, #4A2A1A 0%, #6A3A2A 100%); }
+.slide-product-tag { position: absolute; top: 16px; left: 16px; background: var(--gorange); color: #fff; font-size: 11px; font-weight: 700; padding: 5px 12px; border-radius: 4px; text-transform: uppercase; }
+.slide-icon { font-size: 72px; opacity: 0.25; }
+.slide-label { color: #fff; font-family: 'Bebas Neue', sans-serif; font-size: 26px; letter-spacing: 1.5px; text-align: center; }
+.slide-sublabel { color: rgba(255,255,255,0.45); font-size: 13px; }
+.carousel-dots { position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; z-index: 2; }
+.carousel-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.25); transition: all 0.3s; cursor: pointer; border: none; padding: 0; }
+.carousel-dot.active { background: var(--gorange); width: 24px; border-radius: 4px; }
+.carousel-counter { position: absolute; top: 16px; right: 20px; color: rgba(255,255,255,0.35); font-size: 12px; z-index: 2; }
+
+/* ===== TRUST BAR ===== */
+.trust-bar { background: var(--gneutral); padding: 16px 40px; display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; }
+.trust-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--gtext-mid); font-weight: 500; }
+.trust-icon { width: 26px; height: 26px; background: var(--gorange-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; color: var(--gorange); }
+
+/* ===== SECTIONS ===== */
+.section { padding: 60px 40px; }
+.section-header { text-align: center; margin-bottom: 40px; }
+.section-header h2 { font-family: 'Bebas Neue', sans-serif; font-size: 36px; color: var(--gblue); letter-spacing: 1.5px; }
+.section-header p { color: var(--gtext-mid); font-size: 15px; margin-top: 8px; }
+.section-header .accent-line { width: 40px; height: 3px; background: var(--gorange); margin: 12px auto 0; border-radius: 2px; }
+
+/* ===== CATEGORY CARDS ===== */
+.cat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.cat-card { background: var(--gwhite); border: 1px solid var(--gborder); border-radius: 12px; overflow: hidden; transition: all 0.25s; cursor: pointer; }
+.cat-card:hover { border-color: var(--gorange); transform: translateY(-4px); }
+.cat-img { height: 150px; display: flex; align-items: center; justify-content: center; position: relative; }
+.cat-img-label { position: absolute; bottom: 10px; left: 10px; background: var(--gblue); color: #fff; font-size: 10px; font-weight: 700; padding: 4px 10px; border-radius: 4px; text-transform: uppercase; }
+.cat-body { padding: 16px; }
+.cat-body h3 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+.cat-body p { font-size: 12px; color: var(--gtext-mid); line-height: 1.5; }
+.cat-body .cat-count { font-size: 11px; color: var(--gorange); font-weight: 700; margin-top: 8px; }
+
+/* ===== PRODUCT CARDS ===== */
+.products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.product-card { background: var(--gwhite); border: 1px solid var(--gborder); border-radius: 12px; overflow: hidden; transition: all 0.25s; }
+.product-card:hover { border-color: var(--gorange); }
+.product-img { height: 200px; background: var(--gneutral); position: relative; display: flex; align-items: center; justify-content: center; }
+.product-img .tag { position: absolute; top: 12px; left: 12px; background: var(--gorange); color: #fff; font-size: 10px; font-weight: 700; padding: 4px 10px; border-radius: 4px; text-transform: uppercase; }
+.placeholder-product { width: 120px; height: 80px; background: #ddd; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 11px; color: #999; }
+.product-body { padding: 16px; }
+.product-body h4 { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+.product-body .specs { font-size: 12px; color: var(--gtext-mid); line-height: 1.5; margin-bottom: 10px; }
+.product-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f0f0f0; padding-top: 10px; }
+.product-price { font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: var(--gblue); }
+.product-btn { background: var(--gblue); color: #fff; border: none; padding: 8px 16px; border-radius: 6px; font-size: 12px; font-weight: 700; cursor: pointer; font-family: 'DM Sans', sans-serif; }
+
+/* ===== CTA BANNER ===== */
+.cta-banner { background: linear-gradient(135deg, var(--gorange) 0%, var(--gorange-dark) 100%); border-radius: 16px; padding: 48px; display: flex; align-items: center; justify-content: space-between; margin: 0 40px 60px; }
+.cta-banner h2 { font-family: 'Bebas Neue', sans-serif; font-size: 36px; color: #fff; letter-spacing: 1.5px; }
+.cta-banner p { color: rgba(255,255,255,0.8); font-size: 14px; margin-top: 8px; max-width: 440px; }
+.cta-banner button { background: #fff; color: var(--gorange); border: none; padding: 14px 32px; border-radius: 6px; font-size: 14px; font-weight: 700; cursor: pointer; font-family: 'DM Sans', sans-serif; white-space: nowrap; }
+
+/* ===== MAP ===== */
+.map-section { background: var(--gwhite); }
+.map-wrap { max-width: 740px; margin: 0 auto; position: relative; }
+.map-box { position: relative; border: 1px solid var(--gborder); border-radius: 14px; background: #eef2f7; overflow: hidden; }
+#mapCanvas { display: block; width: 100%; cursor: grab; }
+#mapCanvas:active { cursor: grabbing; }
+.map-controls { position: absolute; top: 12px; right: 12px; display: flex; flex-direction: column; gap: 4px; z-index: 10; }
+.mc-btn { width: 30px; height: 30px; border-radius: 6px; border: 1px solid var(--gborder); background: var(--gwhite); cursor: pointer; font-size: 16px; font-weight: 500; color: var(--gblue); display: flex; align-items: center; justify-content: center; font-family: 'DM Sans', sans-serif; transition: all 0.15s; }
+.mc-btn:hover { background: var(--gorange); color: #fff; border-color: var(--gorange); }
+.map-tt { position: absolute; background: var(--gblue); color: #fff; padding: 8px 14px; border-radius: 8px; font-size: 12px; pointer-events: none; z-index: 20; opacity: 0; transition: opacity 0.15s; white-space: nowrap; transform: translate(-50%, -110%); }
+.map-tt::after { content:''; position:absolute; bottom:-6px; left:50%; transform:translateX(-50%); border-left:6px solid transparent; border-right:6px solid transparent; border-top:6px solid var(--gblue); }
+.map-tt .tt-name { font-weight: 700; font-size: 13px; }
+.map-tt .tt-detail { opacity: 0.7; font-size: 11px; margin-top: 2px; }
+.map-legend { display: flex; gap: 20px; justify-content: center; margin-top: 16px; flex-wrap: wrap; }
+.legend-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--gtext-mid); }
+.legend-dot { width: 12px; height: 12px; border-radius: 3px; }
+.map-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 20px; }
+.map-stat { text-align: center; padding: 14px; background: var(--gneutral); border-radius: 10px; }
+.map-stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 28px; color: var(--gorange); }
+.map-stat-label { font-size: 11px; color: var(--gtext-mid); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 2px; }
+
+/* ===== CLIENTS ===== */
+.clients-section { background: var(--gneutral); }
+.clients-grid { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; }
+.client-badge { background: var(--gwhite); border: 1px solid var(--gborder); border-radius: 10px; padding: 16px 24px; font-size: 13px; font-weight: 700; color: var(--gtext-mid); text-align: center; min-width: 140px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+/* ===== FOOTER ===== */
+.footer { background: var(--gblue); color: rgba(255,255,255,0.7); padding: 48px 40px 24px; }
+.footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 32px; }
+.footer h3 { color: #fff; font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 1px; margin-bottom: 16px; }
+.footer p, .footer a { font-size: 13px; line-height: 2; color: rgba(255,255,255,0.6); text-decoration: none; display: block; }
+.footer a:hover { color: var(--gorange); }
+.footer-social { display: flex; gap: 12px; margin-top: 16px; }
+.footer-social a { width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.5); text-decoration: none; transition: all 0.2s; }
+.footer-social a:hover { background: var(--gorange); border-color: var(--gorange); color: #fff; }
+.footer-social svg { width: 18px; height: 18px; fill: currentColor; }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; display: flex; justify-content: space-between; font-size: 12px; }
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <span class="topbar-text">Fabricantes de equipamiento para gimnasia artística y deportiva — Envíos a todo el país</span>
+  <div class="topbar-social">
+    <a href="#" title="Instagram"><svg class="social-svg" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+    <a href="#" title="Facebook"><svg class="social-svg" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+    <a href="#" title="WhatsApp"><svg class="social-svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="logo-area">
+    <div class="logo-mark">G</div>
+    <div><div class="logo-text">GIMNART</div><div class="logo-sub">Colchones deportivos</div></div>
+  </div>
+  <div class="nav-links">
+    <a href="#" class="active">Inicio</a>
+    <a href="#">Catálogo</a>
+    <a href="#">Nosotros</a>
+    <a href="#">Contacto</a>
+    <button class="nav-cta">Pedí tu presupuesto</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">Fabricación nacional</div>
+    <h1>Equipamiento para<br><span>gimnasia artística<br>y deportiva</span></h1>
+    <p>Colchones, módulos de espuma, pedanas y tamblineras. Fabricamos equipamiento de calidad para escuelas, clubes y profesorados en toda Argentina.</p>
+    <div class="hero-buttons">
+      <button class="btn-primary">Ver catálogo completo</button>
+      <button class="btn-secondary">Contactar por WhatsApp</button>
+    </div>
+  </div>
+  <div class="hero-carousel" id="heroCarousel">
+    <div class="carousel-counter"><span id="slideNum">1</span> / 5</div>
+    <div class="carousel-track" id="carouselTrack">
+      <div class="carousel-slide"><div class="carousel-slide-inner slide-bg-1"><div class="slide-product-tag">Más vendido</div><div class="slide-icon">&#9649;</div><div class="slide-label">Cajón de salto 4 cuerpos</div><div class="slide-sublabel">Tu foto de producto acá</div></div></div>
+      <div class="carousel-slide"><div class="carousel-slide-inner slide-bg-2"><div class="slide-product-tag">Nuevo</div><div class="slide-icon">&#9645;</div><div class="slide-label">Colchón de caídas</div><div class="slide-sublabel">Tu foto de producto acá</div></div></div>
+      <div class="carousel-slide"><div class="carousel-slide-inner slide-bg-3"><div class="slide-product-tag">Popular</div><div class="slide-icon">&#9647;</div><div class="slide-label">Módulos de espuma</div><div class="slide-sublabel">Tu foto de producto acá</div></div></div>
+      <div class="carousel-slide"><div class="carousel-slide-inner slide-bg-4"><div class="slide-icon">&#9651;</div><div class="slide-label">Tamblinera</div><div class="slide-sublabel">Tu foto de producto acá</div></div></div>
+      <div class="carousel-slide"><div class="carousel-slide-inner slide-bg-5"><div class="slide-icon">&#9635;</div><div class="slide-label">Kit mesa de salto</div><div class="slide-sublabel">Tu foto de producto acá</div></div></div>
+    </div>
+    <div class="carousel-dots" id="carouselDots">
+      <button class="carousel-dot active" data-index="0"></button>
+      <button class="carousel-dot" data-index="1"></button>
+      <button class="carousel-dot" data-index="2"></button>
+      <button class="carousel-dot" data-index="3"></button>
+      <button class="carousel-dot" data-index="4"></button>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item"><div class="trust-icon">&#10003;</div> Envíos a todo el país</div>
+  <div class="trust-item"><div class="trust-icon">&#9733;</div> Fabricación nacional</div>
+  <div class="trust-item"><div class="trust-icon">&#9881;</div> Pedidos a medida</div>
+  <div class="trust-item"><div class="trust-icon">&#9742;</div> Atención personalizada</div>
+  <div class="trust-item"><div class="trust-icon">&#10148;</div> +25 años de trayectoria</div>
+</div>
+
+<!-- CATEGORIES -->
+<section class="section">
+  <div class="section-header">
+    <h2>Explorá por categoría</h2>
+    <p>Todo el equipamiento que necesitás para tu gimnasio, escuela o club</p>
+    <div class="accent-line"></div>
+  </div>
+  <div class="cat-grid">
+    <div class="cat-card">
+      <div class="cat-img" style="background: linear-gradient(135deg, #EBF0F7 0%, #D6E4F0 100%);"><div class="cat-img-label">Popular</div></div>
+      <div class="cat-body"><h3>Colchones de caída y colchonetas</h3><p>De caída, plegables, quitamiedos y más. Múltiples densidades y medidas.</p><div class="cat-count">12 productos</div></div>
+    </div>
+    <div class="cat-card">
+      <div class="cat-img" style="background: linear-gradient(135deg, #FFF3EC 0%, #FFE0CC 100%);"></div>
+      <div class="cat-body"><h3>Módulos de espuma</h3><p>Rampas, cilindros, cuñas y módulos para gimnasia artística y deportiva.</p><div class="cat-count">8 productos</div></div>
+    </div>
+    <div class="cat-card">
+      <div class="cat-img" style="background: linear-gradient(135deg, #E8F8EE 0%, #C8EDDA 100%);"></div>
+      <div class="cat-body"><h3>Cajones de salto</h3><p>Desmontables en 4 cuerpos. Espuma de alta densidad con gamuza sintética.</p><div class="cat-count">4 productos</div></div>
+    </div>
+    <div class="cat-card">
+      <div class="cat-img" style="background: linear-gradient(135deg, #F5EEFF 0%, #E5D4FF 100%);"></div>
+      <div class="cat-body"><h3>Tamblineras y pistas</h3><p>Mini-trampolines y caminos de tumbling para entrenamiento.</p><div class="cat-count">3 productos</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED PRODUCTS -->
+<section class="section" style="background: var(--gneutral);">
+  <div class="section-header">
+    <h2>Productos destacados</h2>
+    <p>Los más elegidos por profes y clubes</p>
+    <div class="accent-line"></div>
+  </div>
+  <div class="products-grid">
+    <div class="product-card">
+      <div class="product-img"><div class="tag">Más vendido</div><div class="placeholder-product">Foto producto</div></div>
+      <div class="product-body"><h4>Cajón de salto desmontable 4 cuerpos</h4><div class="specs">Espuma alta densidad · Gamuza sintética · 80x60x100cm · Numerado 1-4</div><div class="product-footer"><div class="product-price">Consultar</div><button class="product-btn">Ver detalle</button></div></div>
+    </div>
+    <div class="product-card">
+      <div class="product-img"><div class="tag" style="background:var(--gblue);">Nuevo</div><div class="placeholder-product">Foto producto</div></div>
+      <div class="product-body"><h4>Colchón de caída 200x150x30cm</h4><div class="specs">Espuma compactada 70kg · Lona vinílica reforzada · Colores a elección</div><div class="product-footer"><div class="product-price">Consultar</div><button class="product-btn">Ver detalle</button></div></div>
+    </div>
+    <div class="product-card">
+      <div class="product-img"><div class="placeholder-product">Foto producto</div></div>
+      <div class="product-body"><h4>Kit mesa de salto completo</h4><div class="specs">Placa foam 200x100x4cm · Gamuza sintética 200x140cm · Pegamento incluido</div><div class="product-footer"><div class="product-price">Consultar</div><button class="product-btn">Ver detalle</button></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<div style="padding: 20px 0;">
+  <div class="cta-banner">
+    <div><h2>¿Necesitás equipar tu gimnasio?</h2><p>Armá un presupuesto a medida. Fabricamos en las medidas, colores y densidades que necesites. Envíos a todo el país.</p></div>
+    <button>Pedir presupuesto por WhatsApp</button>
+  </div>
+</div>
+
+<!-- MAP SECTION -->
+<section class="section map-section">
+  <div class="section-header">
+    <h2>Dónde llegamos</h2>
+    <p>+25 años equipando gimnasios en Argentina y la región</p>
+    <div class="accent-line"></div>
+  </div>
+  <div class="map-wrap">
+    <div class="map-box">
+      <div class="map-controls">
+        <button class="mc-btn" id="zIn">+</button>
+        <button class="mc-btn" id="zOut">−</button>
+        <button class="mc-btn" id="zReset" style="font-size:11px;">R</button>
+      </div>
+      <div class="map-tt" id="tt"></div>
+      <svg id="mapCanvas" viewBox="0 0 600 700"></svg>
+    </div>
+    <div class="map-legend">
+      <div class="legend-item"><div class="legend-dot" style="background:#E8662A;"></div> Argentina (entregas)</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#1A3A5C;"></div> Países limítrofes</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#dde4ed;"></div> Otros países</div>
+    </div>
+    <div class="map-stats">
+      <div class="map-stat"><div class="map-stat-num">18+</div><div class="map-stat-label">Provincias</div></div>
+      <div class="map-stat"><div class="map-stat-num">4</div><div class="map-stat-label">Países</div></div>
+      <div class="map-stat"><div class="map-stat-num">50+</div><div class="map-stat-label">Ciudades</div></div>
+      <div class="map-stat"><div class="map-stat-num">500+</div><div class="map-stat-label">Entregas</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section class="section clients-section">
+  <div class="section-header">
+    <h2>Nos eligen</h2>
+    <p>Instituciones, clubes y profesorados de todo el país</p>
+    <div class="accent-line"></div>
+  </div>
+  <div class="clients-grid">
+    <div class="client-badge">CENARD</div>
+    <div class="client-badge">PROFESORADOS DE ED. FÍSICA</div>
+    <div class="client-badge">MUNICIPALIDADES</div>
+    <div class="client-badge">CLUBES DEPORTIVOS</div>
+    <div class="client-badge">ESCUELAS DE GIMNASIA</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-top">
+    <div>
+      <h3>GIMNART</h3>
+      <p>Fabricantes de equipamiento para gimnasia artística y deportiva. Colchones, módulos de espuma, pedanas y tamblineras. Calidad argentina para todo el país.</p>
+      <div class="footer-social">
+        <a href="#" title="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+        <a href="#" title="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+        <a href="#" title="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <h3>Catálogo</h3>
+      <a href="#">Colchones y colchonetas</a>
+      <a href="#">Módulos de espuma</a>
+      <a href="#">Cajones de salto</a>
+      <a href="#">Tamblineras</a>
+      <a href="#">Kits y accesorios</a>
+    </div>
+    <div>
+      <h3>Empresa</h3>
+      <a href="#">Nosotros</a>
+      <a href="#">Entregas realizadas</a>
+      <a href="#">Contacto</a>
+    </div>
+    <div>
+      <h3>Contacto</h3>
+      <p>WhatsApp: +54 9 11 4063-0099</p>
+      <p>Instagram: @colchonesdeportivos</p>
+      <p>Buenos Aires, Argentina</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 GIMNART — Colchones Deportivos. Todos los derechos reservados.</span>
+    <span>Fabricación nacional</span>
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+<script>
+// Carousel
+(function() {
+  var current = 0, total = 5;
+  var track = document.getElementById('carouselTrack');
+  var dots = document.querySelectorAll('.carousel-dot');
+  var counter = document.getElementById('slideNum');
+  function goTo(i) {
+    current = i;
+    track.style.transform = 'translateX(-' + (current * 100) + '%)';
+    dots.forEach(function(d, j) { d.classList.toggle('active', j === current); });
+    counter.textContent = current + 1;
+  }
+  dots.forEach(function(dot) {
+    dot.addEventListener('click', function() { goTo(parseInt(this.getAttribute('data-index'))); });
+  });
+  setInterval(function() { goTo((current + 1) % total); }, 2500);
+})();
+
+// Map
+(function() {
+  var width = 600, height = 700;
+  var svg = d3.select('#mapCanvas');
+  var g = svg.append('g');
+  var tt = document.getElementById('tt');
+  var mapBox = document.querySelector('.map-box');
+
+  var projection = d3.geoMercator()
+    .center([-63, -38])
+    .scale(750)
+    .translate([width / 2, height / 2]);
+
+  var path = d3.geoPath().projection(projection);
+
+  var limitrofes = ['Brazil', 'Paraguay', 'Uruguay', 'Bolivia', 'Chile'];
+
+  var pins = [
+    { name: 'Buenos Aires', detail: 'CABA y Gran Buenos Aires', lat: -34.6037, lon: -58.3816, type: 'ar' },
+    { name: 'Rosario', detail: 'Rosario, Santa Fe', lat: -32.9468, lon: -60.6393, type: 'ar' },
+    { name: 'Jujuy', detail: 'San Salvador de Jujuy', lat: -24.1858, lon: -65.2995, type: 'ar' },
+    { name: 'Lago Puelo', detail: 'Lago Puelo, Chubut', lat: -42.0833, lon: -71.6167, type: 'ar' },
+    { name: 'Córdoba', detail: 'Córdoba Capital', lat: -31.4201, lon: -64.1888, type: 'ar' },
+    { name: 'Mendoza', detail: 'Mendoza Capital', lat: -32.8895, lon: -68.8458, type: 'ar' },
+    { name: 'Montevideo', detail: 'Montevideo, Uruguay', lat: -34.9011, lon: -56.1645, type: 'int' },
+    { name: 'Asunción', detail: 'Asunción, Paraguay', lat: -25.2637, lon: -57.5759, type: 'int' },
+    { name: 'Porto Alegre', detail: 'Porto Alegre, Brasil', lat: -30.0346, lon: -51.2177, type: 'int' },
+  ];
+
+  var nameMap = { 32:'Argentina', 68:'Bolivia', 76:'Brazil', 152:'Chile', 170:'Colombia', 218:'Ecuador', 254:'French Guiana', 328:'Guyana', 600:'Paraguay', 604:'Peru', 740:'Suriname', 858:'Uruguay', 862:'Venezuela' };
+  var saIds = [32, 68, 76, 152, 170, 218, 254, 328, 600, 604, 740, 858, 862];
+
+  d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json').then(function(world) {
+    var countries = topojson.feature(world, world.objects.countries).features;
+    var southAm = countries.filter(function(f) { return saIds.indexOf(+f.id) !== -1; });
+
+    g.selectAll('path.country')
+      .data(southAm)
+      .enter().append('path')
+      .attr('class', 'country')
+      .attr('d', path)
+      .attr('fill', function(d) {
+        var n = nameMap[+d.id] || '';
+        if (n === 'Argentina') return 'rgba(232,102,42,0.18)';
+        if (limitrofes.indexOf(n) !== -1) return '#c8d6e5';
+        return '#dde4ed';
+      })
+      .attr('stroke', function(d) {
+        return nameMap[+d.id] === 'Argentina' ? '#E8662A' : '#b0bec5';
+      })
+      .attr('stroke-width', function(d) {
+        return nameMap[+d.id] === 'Argentina' ? 1.5 : 0.5;
+      })
+      .on('mouseenter', function(event, d) {
+        var n = nameMap[+d.id] || '';
+        if (!n) return;
+        tt.innerHTML = '<div class="tt-name">' + n + '</div>';
+        tt.style.opacity = '1';
+      })
+      .on('mousemove', function(event) {
+        var rect = mapBox.getBoundingClientRect();
+        tt.style.left = (event.clientX - rect.left) + 'px';
+        tt.style.top = (event.clientY - rect.top) + 'px';
+      })
+      .on('mouseleave', function() { tt.style.opacity = '0'; });
+
+    var pinG = g.selectAll('g.pin')
+      .data(pins)
+      .enter().append('g')
+      .attr('class', 'pin')
+      .attr('transform', function(d) { var p = projection([d.lon, d.lat]); return 'translate(' + p[0] + ',' + p[1] + ')'; })
+      .style('cursor', 'pointer');
+
+    pinG.append('circle')
+      .attr('r', 8)
+      .attr('fill', function(d) { return d.type === 'ar' ? '#E8662A' : '#1A3A5C'; })
+      .attr('stroke', '#fff')
+      .attr('stroke-width', 2);
+
+    pinG.append('text')
+      .attr('text-anchor', 'middle')
+      .attr('dy', '0.35em')
+      .attr('font-size', '9px')
+      .attr('font-weight', '700')
+      .attr('fill', '#fff')
+      .attr('font-family', 'Bebas Neue, sans-serif')
+      .text('G');
+
+    pinG.on('mouseenter', function(event, d) {
+        tt.innerHTML = '<div class="tt-name">' + d.name + '</div><div class="tt-detail">' + d.detail + '</div>';
+        tt.style.opacity = '1';
+      })
+      .on('mousemove', function(event) {
+        var rect = mapBox.getBoundingClientRect();
+        tt.style.left = (event.clientX - rect.left) + 'px';
+        tt.style.top = (event.clientY - rect.top) + 'px';
+      })
+      .on('mouseleave', function() { tt.style.opacity = '0'; });
+
+    // Zoom & Pan
+    var currentScale = 1, tx = 0, ty = 0;
+    function applyZoom() { g.attr('transform', 'translate(' + tx + ',' + ty + ') scale(' + currentScale + ')'); }
+
+    document.getElementById('zIn').addEventListener('click', function() { currentScale = Math.min(currentScale * 1.5, 6); applyZoom(); });
+    document.getElementById('zOut').addEventListener('click', function() { currentScale = Math.max(currentScale / 1.5, 1); if (currentScale === 1) { tx = 0; ty = 0; } applyZoom(); });
+    document.getElementById('zReset').addEventListener('click', function() { currentScale = 1; tx = 0; ty = 0; applyZoom(); });
+
+    var dragging = false, sx, sy;
+    svg.on('mousedown', function(event) { if (currentScale > 1) { dragging = true; sx = event.clientX - tx; sy = event.clientY - ty; } });
+    d3.select(window).on('mousemove.map', function(event) { if (dragging) { tx = event.clientX - sx; ty = event.clientY - sy; applyZoom(); } });
+    d3.select(window).on('mouseup.map', function() { dragging = false; });
+    svg.on('wheel', function(event) {
+      event.preventDefault();
+      if (event.deltaY < 0) currentScale = Math.min(currentScale * 1.2, 6);
+      else currentScale = Math.max(currentScale / 1.2, 1);
+      if (currentScale === 1) { tx = 0; ty = 0; }
+      applyZoom();
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
