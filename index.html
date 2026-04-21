@@ -124,8 +124,8 @@ body, html { font-family: 'DM Sans', sans-serif; color: var(--gtext); background
 .map-section { background: var(--gwhite); }
 .map-wrap { max-width: 740px; margin: 0 auto; position: relative; }
 .map-box { position: relative; border: 1px solid var(--gborder); border-radius: 14px; background: #eef2f7; overflow: hidden; }
-#mapCanvas { display: block; width: 100%; cursor: grab; }
-#mapCanvas:active { cursor: grabbing; }
+
+
 .map-controls { position: absolute; top: 12px; right: 12px; display: flex; flex-direction: column; gap: 4px; z-index: 10; }
 .mc-btn { width: 30px; height: 30px; border-radius: 6px; border: 1px solid var(--gborder); background: var(--gwhite); cursor: pointer; font-size: 16px; font-weight: 500; color: var(--gblue); display: flex; align-items: center; justify-content: center; font-family: 'DM Sans', sans-serif; transition: all 0.15s; }
 .mc-btn:hover { background: var(--gorange); color: #fff; border-color: var(--gorange); }
@@ -278,67 +278,7 @@ body, html { font-family: 'DM Sans', sans-serif; color: var(--gtext); background
 </section>
 
 
-<!-- ENTREGAS / INSTAGRAM -->
-<section class="section" style="background:var(--gneutral);padding:48px 0 40px;">
-  <div class="section-header">
-    <h2>Entregas realizadas</h2>
-    <p>Gimnasios, clubes y escuelas que ya equipamos en todo el país</p>
-    <div class="accent-line"></div>
-  </div>
-  <style>
-    .ig-carousel {display:flex;gap:16px;overflow-x:auto;scroll-behavior:smooth;padding:0 40px 16px;-ms-overflow-style:none;scrollbar-width:none;}
-    .ig-carousel::-webkit-scrollbar {display:none;}
-    .ig-card {min-width:320px;max-width:320px;flex-shrink:0;}
-    .ig-nav {position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;background:var(--gwhite);border:1px solid var(--gborder);cursor:pointer;font-size:18px;color:var(--gblue);display:flex;align-items:center;justify-content:center;z-index:2;transition:all 0.2s;box-shadow:0 2px 8px rgba(0,0,0,0.1);}
-    .ig-nav:hover {background:var(--gorange);color:#fff;border-color:var(--gorange);}
-  </style>
-  <div style="position:relative;margin-top:24px;">
-    <div class="ig-carousel" id="igCarousel">
-      <div class="ig-card">
-        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/gimnasiaccva_/p/DVrm3G9jmov/" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:none;margin:0;max-width:320px;min-width:280px;padding:0;width:100%;"></blockquote>
-      </div>
-      <div class="ig-card">
-        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/colchonesdeportivos/reel/DVD_8WpDQHQ/" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:none;margin:0;max-width:320px;min-width:280px;padding:0;width:100%;"></blockquote>
-      </div>
-      <div class="ig-card">
-        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/colchonesdeportivos/reel/DUQkC0SDTMx/" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:none;margin:0;max-width:320px;min-width:280px;padding:0;width:100%;"></blockquote>
-      </div>
-      <div class="ig-card">
-        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/colchonesdeportivos/reel/DUHBTAKEXyt/" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:none;margin:0;max-width:320px;min-width:280px;padding:0;width:100%;"></blockquote>
-      </div>
-      <div class="ig-card">
-        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/colchonesdeportivos/p/DT9HUmpjfqd/" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:none;margin:0;max-width:320px;min-width:280px;padding:0;width:100%;"></blockquote>
-      </div>
-      <div class="ig-card">
-        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/colchonesdeportivos/reel/DT8_pgQDaFj/" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:none;margin:0;max-width:320px;min-width:280px;padding:0;width:100%;"></blockquote>
-      </div>
-      <div class="ig-card">
-        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/colchonesdeportivos/p/DTq9Dj0jbI3/" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:none;margin:0;max-width:320px;min-width:280px;padding:0;width:100%;"></blockquote>
-      </div>
-      <div class="ig-card">
-        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/colchonesdeportivos/p/DPucBjWDVBm/" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:none;margin:0;max-width:320px;min-width:280px;padding:0;width:100%;"></blockquote>
-      </div>
-      <div class="ig-card">
-        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/colchonesdeportivos/p/DPubaoSDdoh/" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:none;margin:0;max-width:320px;min-width:280px;padding:0;width:100%;"></blockquote>
-      </div>
-      <div class="ig-card">
-        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/colchonesdeportivos/p/DJy_DItx28M/" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:none;margin:0;max-width:320px;min-width:280px;padding:0;width:100%;"></blockquote>
-      </div>
-      <div class="ig-card">
-        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/artistica_dynamic/reel/DGS5KTxx-YY/" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:none;margin:0;max-width:320px;min-width:280px;padding:0;width:100%;"></blockquote>
-      </div>
-      <div class="ig-card">
-        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/colchonesdeportivos/reel/DAW7PV1PoEO/" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:none;margin:0;max-width:320px;min-width:280px;padding:0;width:100%;"></blockquote>
-      </div>
-      
-    </div>
-    <button class="ig-nav" style="left:8px;" onclick="document.getElementById('igCarousel').scrollBy({left:-340,behavior:'smooth'})">&larr;</button>
-    <button class="ig-nav" style="right:8px;" onclick="document.getElementById('igCarousel').scrollBy({left:340,behavior:'smooth'})">&rarr;</button>
-  </div>
-  <div style="text-align:center;margin-top:20px;">
-    <a href="https://www.instagram.com/colchonesdeportivos/" target="_blank" style="display:inline-flex;align-items:center;gap:8px;color:var(--gorange);font-weight:700;font-size:14px;text-decoration:none;">Seguinos en Instagram &rarr;</a>
-  </div>
-</section>
+
 
 <!-- CTA BANNER -->
 <div style="padding: 20px 0;">
@@ -356,14 +296,106 @@ body, html { font-family: 'DM Sans', sans-serif; color: var(--gtext); background
     <div class="accent-line"></div>
   </div>
   <div class="map-wrap">
-    <div class="map-box">
-      <div class="map-controls">
-        <button class="mc-btn" id="zIn">+</button>
-        <button class="mc-btn" id="zOut">−</button>
-        <button class="mc-btn" id="zReset" style="font-size:11px;">R</button>
-      </div>
-      <div class="map-tt" id="tt"></div>
-      <svg id="mapCanvas" viewBox="0 0 600 480"></svg>
+    <div class="map-box" style="position:relative;max-width:500px;margin:0 auto;background:var(--gneutral);border-radius:16px;overflow:hidden;">
+      <svg viewBox="0 0 500 600" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+        <!-- South America background -->
+        <defs>
+          <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.1"/></filter>
+        </defs>
+        
+        <!-- Simplified South America countries -->
+        <!-- Brazil -->
+        <path d="M280,80 L350,90 L380,120 L400,170 L410,230 L390,290 L360,330 L320,350 L280,340 L260,310 L240,280 L220,240 L210,200 L220,160 L240,120 L260,90 Z" fill="#dde4ed" stroke="#b0bec5" stroke-width="0.8"/>
+        <!-- Chile -->
+        <path d="M120,220 L130,250 L125,300 L120,350 L115,400 L110,450 L105,500 L100,540 L95,560 L90,570 L85,560 L90,540 L95,500 L100,450 L105,400 L110,350 L115,300 L120,250 Z" fill="#dde4ed" stroke="#b0bec5" stroke-width="0.8"/>
+        <!-- Bolivia -->
+        <path d="M200,170 L240,160 L260,175 L255,210 L235,230 L210,225 L195,205 Z" fill="#c8d6e5" stroke="#b0bec5" stroke-width="0.8"/>
+        <!-- Paraguay -->
+        <path d="M240,230 L280,225 L290,250 L275,280 L250,285 L235,265 Z" fill="#c8d6e5" stroke="#b0bec5" stroke-width="0.8"/>
+        <!-- Uruguay -->
+        <path d="M285,310 L310,300 L320,320 L310,340 L290,345 L280,330 Z" fill="#c8d6e5" stroke="#b0bec5" stroke-width="0.8"/>
+        
+        <!-- Argentina with provinces (simplified outlines) -->
+        <g id="argentina">
+          <!-- Jujuy -->
+          <path d="M175,175 L190,170 L195,185 L185,195 L175,190 Z" fill="rgba(232,102,42,0.18)" stroke="#E8662A" stroke-width="0.7"><title>Jujuy</title></path>
+          <!-- Salta -->
+          <path d="M175,190 L195,185 L205,195 L210,215 L195,225 L180,220 L170,205 Z" fill="rgba(232,102,42,0.18)" stroke="#E8662A" stroke-width="0.7"><title>Salta</title></path>
+          <!-- Tucumán -->
+          <path d="M185,220 L200,218 L205,230 L195,235 L185,230 Z" fill="rgba(232,102,42,0.18)" stroke="#E8662A" stroke-width="0.7"><title>Tucumán</title></path>
+          <!-- Catamarca -->
+          <path d="M165,225 L185,220 L185,245 L175,260 L160,255 Z" fill="rgba(232,102,42,0.18)" stroke="#E8662A" stroke-width="0.7"><title>Catamarca</title></path>
+          <!-- Santiago del Estero -->
+          <path d="M200,218 L220,215 L230,240 L220,265 L200,260 L195,240 Z" fill="rgba(232,102,42,0.18)" stroke="#E8662A" stroke-width="0.7"><title>Santiago del Estero</title></path>
+          <!-- Formosa -->
+          <path d="M210,195 L245,188 L250,205 L230,215 L210,212 Z" fill="rgba(232,102,42,0.18)" stroke="#E8662A" stroke-width="0.7"><title>Formosa</title></path>
+          <!-- Chaco -->
+          <path d="M220,215 L250,205 L255,225 L240,240 L225,238 Z" fill="rgba(232,102,42,0.18)" stroke="#E8662A" stroke-width="0.7"><title>Chaco</title></path>
+          <!-- Misiones -->
+          <path d="M270,215 L285,205 L290,220 L280,235 L268,230 Z" fill="rgba(232,102,42,0.18)" stroke="#E8662A" stroke-width="0.7"><title>Misiones</title></path>
+          <!-- Corrientes -->
+          <path d="M250,230 L275,225 L280,250 L260,260 L245,255 Z" fill="rgba(232,102,42,0.18)" stroke="#E8662A" stroke-width="0.7"><title>Corrientes</title></path>
+          <!-- Entre Ríos -->
+          <path d="M255,265 L275,258 L285,280 L280,310 L260,305 L250,285 Z" fill="rgba(232,102,42,0.18)" stroke="#E8662A" stroke-width="0.7"><title>Entre Ríos</title></path>
+          <!-- Santa Fe -->
+          <path d="M230,245 L255,240 L260,270 L255,305 L235,300 L225,270 Z" fill="rgba(232,102,42,0.18)" stroke="#E8662A" stroke-width="0.7"><title>Santa Fe</title></path>
+          <!-- Córdoba -->
+          <path d="M195,255 L225,250 L230,280 L225,310 L200,305 L190,280 Z" fill="rgba(232,102,42,0.18)" stroke="#E8662A" stroke-width="0.7"><title>Córdoba</title></path>
+          <!-- San Luis -->
+          <path d="M170,280 L195,275 L200,305 L185,315 L165,310 Z" fill="rgba(232,102,42,0.18)" stroke="#E8662A" stroke-width="0.7"><title>San Luis</title></path>
+          <!-- La Rioja -->
+          <path d="M155,255 L175,250 L180,280 L170,295 L150,290 Z" fill="rgba(232,102,42,0.18)" stroke="#E8662A" stroke-width="0.7"><title>La Rioja</title></path>
+          <!-- San Juan -->
+          <path d="M140,265 L158,260 L162,290 L150,305 L135,300 Z" fill="rgba(232,102,42,0.18)" stroke="#E8662A" stroke-width="0.7"><title>San Juan</title></path>
+          <!-- Mendoza -->
+          <path d="M130,300 L155,295 L165,320 L155,345 L130,340 L125,320 Z" fill="rgba(232,102,42,0.18)" stroke="#E8662A" stroke-width="0.7"><title>Mendoza</title></path>
+          <!-- La Pampa -->
+          <path d="M165,315 L210,310 L220,340 L210,365 L160,360 L155,340 Z" fill="rgba(232,102,42,0.18)" stroke="#E8662A" stroke-width="0.7"><title>La Pampa</title></path>
+          <!-- Buenos Aires -->
+          <path d="M220,310 L265,305 L280,320 L275,355 L255,370 L215,365 L210,340 Z" fill="rgba(232,102,42,0.25)" stroke="#E8662A" stroke-width="0.9"><title>Buenos Aires</title></path>
+          <!-- Neuquén -->
+          <path d="M135,355 L170,350 L175,375 L155,390 L130,385 Z" fill="rgba(232,102,42,0.18)" stroke="#E8662A" stroke-width="0.7"><title>Neuquén</title></path>
+          <!-- Río Negro -->
+          <path d="M130,385 L175,375 L215,370 L230,385 L220,410 L150,415 L125,405 Z" fill="rgba(232,102,42,0.18)" stroke="#E8662A" stroke-width="0.7"><title>Río Negro</title></path>
+          <!-- Chubut -->
+          <path d="M115,415 L225,410 L230,450 L220,470 L110,475 L105,450 Z" fill="rgba(232,102,42,0.18)" stroke="#E8662A" stroke-width="0.7"><title>Chubut</title></path>
+          <!-- Santa Cruz -->
+          <path d="M100,475 L225,470 L220,530 L200,545 L95,540 L90,510 Z" fill="rgba(232,102,42,0.18)" stroke="#E8662A" stroke-width="0.7"><title>Santa Cruz</title></path>
+          <!-- Tierra del Fuego -->
+          <path d="M130,555 L180,550 L185,570 L170,580 L125,575 Z" fill="rgba(232,102,42,0.18)" stroke="#E8662A" stroke-width="0.7"><title>Tierra del Fuego</title></path>
+        </g>
+        
+        <!-- Delivery pins -->
+        <!-- Buenos Aires / CABA -->
+        <g transform="translate(260,325)"><circle r="10" fill="#E8662A" stroke="#fff" stroke-width="2.5" filter="url(#shadow)"/><text text-anchor="middle" dy="0.35em" font-size="10" font-weight="700" fill="#fff" font-family="Bebas Neue,sans-serif">G</text></g>
+        <!-- Rosario -->
+        <g transform="translate(238,290)"><circle r="8" fill="#E8662A" stroke="#fff" stroke-width="2"/><text text-anchor="middle" dy="0.35em" font-size="9" font-weight="700" fill="#fff" font-family="Bebas Neue,sans-serif">G</text></g>
+        <!-- Córdoba -->
+        <g transform="translate(205,280)"><circle r="8" fill="#E8662A" stroke="#fff" stroke-width="2"/><text text-anchor="middle" dy="0.35em" font-size="9" font-weight="700" fill="#fff" font-family="Bebas Neue,sans-serif">G</text></g>
+        <!-- Mendoza -->
+        <g transform="translate(145,315)"><circle r="8" fill="#E8662A" stroke="#fff" stroke-width="2"/><text text-anchor="middle" dy="0.35em" font-size="9" font-weight="700" fill="#fff" font-family="Bebas Neue,sans-serif">G</text></g>
+        <!-- Jujuy -->
+        <g transform="translate(183,180)"><circle r="8" fill="#E8662A" stroke="#fff" stroke-width="2"/><text text-anchor="middle" dy="0.35em" font-size="9" font-weight="700" fill="#fff" font-family="Bebas Neue,sans-serif">G</text></g>
+        <!-- Lago Puelo (Chubut) -->
+        <g transform="translate(130,445)"><circle r="8" fill="#E8662A" stroke="#fff" stroke-width="2"/><text text-anchor="middle" dy="0.35em" font-size="9" font-weight="700" fill="#fff" font-family="Bebas Neue,sans-serif">G</text></g>
+        <!-- Montevideo (Uruguay) -->
+        <g transform="translate(300,330)"><circle r="8" fill="#1A3A5C" stroke="#fff" stroke-width="2"/><text text-anchor="middle" dy="0.35em" font-size="9" font-weight="700" fill="#fff" font-family="Bebas Neue,sans-serif">G</text></g>
+        <!-- Asunción (Paraguay) -->
+        <g transform="translate(255,240)"><circle r="8" fill="#1A3A5C" stroke="#fff" stroke-width="2"/><text text-anchor="middle" dy="0.35em" font-size="9" font-weight="700" fill="#fff" font-family="Bebas Neue,sans-serif">G</text></g>
+        <!-- Porto Alegre (Brasil) -->
+        <g transform="translate(320,295)"><circle r="8" fill="#1A3A5C" stroke="#fff" stroke-width="2"/><text text-anchor="middle" dy="0.35em" font-size="9" font-weight="700" fill="#fff" font-family="Bebas Neue,sans-serif">G</text></g>
+        
+        <!-- City labels -->
+        <text x="260" y="345" text-anchor="middle" font-size="8" font-weight="700" fill="#1A3A5C" font-family="DM Sans,sans-serif">Buenos Aires</text>
+        <text x="238" y="303" text-anchor="middle" font-size="7" fill="#1A3A5C" font-family="DM Sans,sans-serif">Rosario</text>
+        <text x="205" y="270" text-anchor="middle" font-size="7" fill="#1A3A5C" font-family="DM Sans,sans-serif">Córdoba</text>
+        <text x="145" y="330" text-anchor="middle" font-size="7" fill="#1A3A5C" font-family="DM Sans,sans-serif">Mendoza</text>
+        <text x="183" y="172" text-anchor="middle" font-size="7" fill="#1A3A5C" font-family="DM Sans,sans-serif">Jujuy</text>
+        <text x="130" y="458" text-anchor="middle" font-size="7" fill="#1A3A5C" font-family="DM Sans,sans-serif">Lago Puelo</text>
+        <text x="315" y="345" text-anchor="start" font-size="7" fill="#555" font-family="DM Sans,sans-serif">Montevideo</text>
+        <text x="255" y="255" text-anchor="middle" font-size="7" fill="#555" font-family="DM Sans,sans-serif">Asunción</text>
+        <text x="335" y="290" text-anchor="start" font-size="7" fill="#555" font-family="DM Sans,sans-serif">Porto Alegre</text>
+      </svg>
     </div>
     <div class="map-legend">
       <div class="legend-item"><div class="legend-dot" style="background:#E8662A;"></div> Argentina (entregas)</div>
@@ -472,167 +504,14 @@ body, html { font-family: 'DM Sans', sans-serif; color: var(--gtext); background
 })();
 </script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
 <script>
 // Carousel moved to separate script above
 
-// Map
-(function() {
-  var width = 600, height = 480;
-  var svg = d3.select('#mapCanvas');
-  var g = svg.append('g');
-  var tt = document.getElementById('tt');
-  var mapBox = document.querySelector('.map-box');
-
-  var projection = d3.geoMercator()
-    .center([-64, -38])
-    .scale(520)
-    .translate([width / 2, height / 2]);
-
-  var path = d3.geoPath().projection(projection);
-
-  var limitrofes = ['Brazil', 'Paraguay', 'Uruguay', 'Bolivia', 'Chile'];
-
-  var pins = [
-    { name: 'Buenos Aires', detail: 'CABA y Gran Buenos Aires', lat: -34.6037, lon: -58.3816, type: 'ar' },
-    { name: 'Rosario', detail: 'Rosario, Santa Fe', lat: -32.9468, lon: -60.6393, type: 'ar' },
-    { name: 'Jujuy', detail: 'San Salvador de Jujuy', lat: -24.1858, lon: -65.2995, type: 'ar' },
-    { name: 'Lago Puelo', detail: 'Lago Puelo, Chubut', lat: -42.0833, lon: -71.6167, type: 'ar' },
-    { name: 'Córdoba', detail: 'Córdoba Capital', lat: -31.4201, lon: -64.1888, type: 'ar' },
-    { name: 'Mendoza', detail: 'Mendoza Capital', lat: -32.8895, lon: -68.8458, type: 'ar' },
-    { name: 'Montevideo', detail: 'Montevideo, Uruguay', lat: -34.9011, lon: -56.1645, type: 'int' },
-    { name: 'Asunción', detail: 'Asunción, Paraguay', lat: -25.2637, lon: -57.5759, type: 'int' },
-    { name: 'Porto Alegre', detail: 'Porto Alegre, Brasil', lat: -30.0346, lon: -51.2177, type: 'int' },
-  ];
-
-  var nameMap = { 32:'Argentina', 68:'Bolivia', 76:'Brazil', 152:'Chile', 170:'Colombia', 218:'Ecuador', 254:'French Guiana', 328:'Guyana', 600:'Paraguay', 604:'Peru', 740:'Suriname', 858:'Uruguay', 862:'Venezuela' };
-  var saIds = [32, 68, 76, 152, 170, 218, 254, 328, 600, 604, 740, 858, 862];
-
-  Promise.all([
-      d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json'),
-      d3.json('https://cdn.jsdelivr.net/gh/codeforamerica/click_that_hood@master/public/data/argentina-provinces.geojson')
-    ]).then(function(data) {
-    var world = data[0];
-    var argProvinces = data[1];
-    var countries = topojson.feature(world, world.objects.countries).features;
-    var southAm = countries.filter(function(f) { return saIds.indexOf(+f.id) !== -1 && +f.id !== 32; });
-
-    // Draw other South American countries first
-    g.selectAll('path.country')
-      .data(southAm)
-      .enter().append('path')
-      .attr('class', 'country')
-      .attr('d', path)
-      .attr('fill', function(d) {
-        var n = nameMap[+d.id] || '';
-        if (limitrofes.indexOf(n) !== -1) return '#c8d6e5';
-        return '#dde4ed';
-      })
-      .attr('stroke', '#b0bec5')
-      .attr('stroke-width', 0.5)
-      .on('mouseenter', function(event, d) {
-        var n = nameMap[+d.id] || '';
-        if (!n) return;
-        tt.innerHTML = '<div class="tt-name">' + n + '</div>';
-        tt.style.opacity = '1';
-      })
-      .on('mousemove', function(event) {
-        var rect = mapBox.getBoundingClientRect();
-        tt.style.left = (event.clientX - rect.left) + 'px';
-        tt.style.top = (event.clientY - rect.top) + 'px';
-      })
-      .on('mouseleave', function() { tt.style.opacity = '0'; });
-
-    // Draw Argentine provinces
-    g.selectAll('path.province')
-      .data(argProvinces.features)
-      .enter().append('path')
-      .attr('class', 'province')
-      .attr('d', path)
-      .attr('fill', 'rgba(232,102,42,0.15)')
-      .attr('stroke', '#E8662A')
-      .attr('stroke-width', 0.6)
-      .on('mouseenter', function(event, d) {
-        d3.select(this).attr('fill', 'rgba(232,102,42,0.35)');
-        var name = d.properties.name || d.properties.NAME || d.properties.provincia || '';
-        tt.innerHTML = '<div class="tt-name">' + name + '</div><div class="tt-detail">Argentina</div>';
-        tt.style.opacity = '1';
-      })
-      .on('mousemove', function(event) {
-        var rect = mapBox.getBoundingClientRect();
-        tt.style.left = (event.clientX - rect.left) + 'px';
-        tt.style.top = (event.clientY - rect.top) + 'px';
-      })
-      .on('mouseleave', function(event, d) {
-        d3.select(this).attr('fill', 'rgba(232,102,42,0.15)');
-        tt.style.opacity = '0';
-      });
-
-    var pinG = g.selectAll('g.pin')
-      .data(pins)
-      .enter().append('g')
-      .attr('class', 'pin')
-      .attr('transform', function(d) { var p = projection([d.lon, d.lat]); return 'translate(' + p[0] + ',' + p[1] + ')'; })
-      .style('cursor', 'pointer');
-
-    pinG.append('circle')
-      .attr('r', 8)
-      .attr('fill', function(d) { return d.type === 'ar' ? '#E8662A' : '#1A3A5C'; })
-      .attr('stroke', '#fff')
-      .attr('stroke-width', 2);
-
-    pinG.append('text')
-      .attr('text-anchor', 'middle')
-      .attr('dy', '0.35em')
-      .attr('font-size', '9px')
-      .attr('font-weight', '700')
-      .attr('fill', '#fff')
-      .attr('font-family', 'Bebas Neue, sans-serif')
-      .text('G');
-
-    pinG.on('mouseenter', function(event, d) {
-        tt.innerHTML = '<div class="tt-name">' + d.name + '</div><div class="tt-detail">' + d.detail + '</div>';
-        tt.style.opacity = '1';
-      })
-      .on('mousemove', function(event) {
-        var rect = mapBox.getBoundingClientRect();
-        tt.style.left = (event.clientX - rect.left) + 'px';
-        tt.style.top = (event.clientY - rect.top) + 'px';
-      })
-      .on('mouseleave', function() { tt.style.opacity = '0'; });
-
-    // Zoom & Pan
-    var currentScale = 1, tx = 0, ty = 0;
-    function applyZoom() { g.attr('transform', 'translate(' + tx + ',' + ty + ') scale(' + currentScale + ')'); }
-
-    document.getElementById('zIn').addEventListener('click', function() { currentScale = Math.min(currentScale * 1.5, 6); applyZoom(); });
-    document.getElementById('zOut').addEventListener('click', function() { currentScale = Math.max(currentScale / 1.5, 1); if (currentScale === 1) { tx = 0; ty = 0; } applyZoom(); });
-    document.getElementById('zReset').addEventListener('click', function() { currentScale = 1; tx = 0; ty = 0; applyZoom(); });
-
-    var dragging = false, sx, sy;
-    svg.on('mousedown', function(event) { if (currentScale > 1) { dragging = true; sx = event.clientX - tx; sy = event.clientY - ty; } });
-    d3.select(window).on('mousemove.map', function(event) { if (dragging) { tx = event.clientX - sx; ty = event.clientY - sy; applyZoom(); } });
-    d3.select(window).on('mouseup.map', function() { dragging = false; });
-    svg.on('wheel', function(event) {
-      event.preventDefault();
-      if (event.deltaY < 0) currentScale = Math.min(currentScale * 1.2, 6);
-      else currentScale = Math.max(currentScale / 1.2, 1);
-      if (currentScale === 1) { tx = 0; ty = 0; }
-      applyZoom();
-    });
-  }).catch(function(err) { console.log('Map load error:', err); });
-})();
+// Map replaced with inline SVG
 
 </script>
 
-<script async src="https://www.instagram.com/embed.js"></script>
-<script>
-// Reload Instagram embeds after page load
-window.addEventListener('load', function() {
-  if (window.instgrm) { window.instgrm.Embeds.process(); }
-  else { setTimeout(function() { if (window.instgrm) window.instgrm.Embeds.process(); }, 2000); }
-});
-</script>
+
+
 </body>
 </html>
