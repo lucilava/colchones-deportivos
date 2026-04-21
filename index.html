@@ -192,13 +192,16 @@ body, html { font-family: 'DM Sans', sans-serif; color: var(--gtext); background
     </div>
   </div>
   <div class="hero-carousel" id="heroCarousel">
-    <div class="carousel-counter"><span id="slideNum">1</span> / 5</div>
+    <div class="carousel-counter"><span id="slideNum">1</span> / 8</div>
     <div class="carousel-track" id="carouselTrack">
       <div class="carousel-slide"><div class="carousel-slide-inner" style="background:url(img/hero-modulos.jpg) center/cover;"><div class="slide-product-tag">Módulos</div><div style="flex:1;"></div><div class="slide-label" style="background:rgba(0,0,0,0.5);padding:8px 20px;border-radius:6px;">Módulos de espuma</div><div style="height:40px;"></div></div></div>
       <div class="carousel-slide"><div class="carousel-slide-inner" style="background:url(img/hero-colchones-viga.jpg) center/cover;"><div class="slide-product-tag">Colchones</div><div style="flex:1;"></div><div class="slide-label" style="background:rgba(0,0,0,0.5);padding:8px 20px;border-radius:6px;">Colchones para vigas</div><div style="height:40px;"></div></div></div>
       <div class="carousel-slide"><div class="carousel-slide-inner" style="background:url(img/hero-cajon.jpg) center/cover;"><div class="slide-product-tag">Más vendido</div><div style="flex:1;"></div><div class="slide-label" style="background:rgba(0,0,0,0.5);padding:8px 20px;border-radius:6px;">Cajón de salto 4 cuerpos</div><div style="height:40px;"></div></div></div>
       <div class="carousel-slide"><div class="carousel-slide-inner" style="background:url(img/hero-tamblinera.jpg) center/cover;"><div class="slide-product-tag">Tamblineras</div><div style="flex:1;"></div><div class="slide-label" style="background:rgba(0,0,0,0.5);padding:8px 20px;border-radius:6px;">Tamblinera a resortes</div><div style="height:40px;"></div></div></div>
       <div class="carousel-slide"><div class="carousel-slide-inner" style="background:url(img/hero-pedana.jpg) center/cover;"><div class="slide-product-tag">Alfombras</div><div style="flex:1;"></div><div class="slide-label" style="background:rgba(0,0,0,0.5);padding:8px 20px;border-radius:6px;">Alfombra para pedana</div><div style="height:40px;"></div></div></div>
+      <div class="carousel-slide"><div class="carousel-slide-inner" style="background:url(img/hero-cilindro-clase.jpg) center/cover;"><div class="slide-product-tag">En acción</div><div style="flex:1;"></div><div class="slide-label" style="background:rgba(0,0,0,0.5);padding:8px 20px;border-radius:6px;">Cilindro en clase de gimnasia</div><div style="height:40px;"></div></div></div>
+      <div class="carousel-slide"><div class="carousel-slide-inner" style="background:url(img/hero-cajon-plano.jpg) center/cover;"><div class="slide-product-tag">Módulos</div><div style="flex:1;"></div><div class="slide-label" style="background:rgba(0,0,0,0.5);padding:8px 20px;border-radius:6px;">Cajón de salto + Plano inclinado</div><div style="height:40px;"></div></div></div>
+      <div class="carousel-slide"><div class="carousel-slide-inner" style="background:url(img/hero-cajon-grande.jpg) center/cover;"><div class="slide-product-tag">Más vendido</div><div style="flex:1;"></div><div class="slide-label" style="background:rgba(0,0,0,0.5);padding:8px 20px;border-radius:6px;">Cajón de salto desmontable</div><div style="height:40px;"></div></div></div>
     </div>
     <div class="carousel-dots" id="carouselDots">
       <button class="carousel-dot active" data-index="0"></button>
@@ -206,6 +209,9 @@ body, html { font-family: 'DM Sans', sans-serif; color: var(--gtext); background
       <button class="carousel-dot" data-index="2"></button>
       <button class="carousel-dot" data-index="3"></button>
       <button class="carousel-dot" data-index="4"></button>
+      <button class="carousel-dot" data-index="5"></button>
+      <button class="carousel-dot" data-index="6"></button>
+      <button class="carousel-dot" data-index="7"></button>
     </div>
   </div>
 </section>
@@ -369,7 +375,7 @@ body, html { font-family: 'DM Sans', sans-serif; color: var(--gtext); background
 <script>
 // Carousel
 (function() {
-  var current = 0, total = 5;
+  var current = 0, total = 8;
   var track = document.getElementById('carouselTrack');
   var dots = document.querySelectorAll('.carousel-dot');
   var counter = document.getElementById('slideNum');
