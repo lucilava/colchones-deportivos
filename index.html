@@ -94,6 +94,8 @@ body, html { font-family: 'DM Sans', sans-serif; color: var(--gtext); background
 .cat-body { padding: 16px; }
 .cat-body h3 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
 .cat-body p { font-size: 12px; color: var(--gtext-mid); line-height: 1.5; }
+
+.cat-slideshow { background-size: cover; background-position: center; transition: background-image 0.6s ease-in-out; }
 .cat-body .cat-count { font-size: 11px; color: var(--gorange); font-weight: 700; margin-top: 8px; }
 
 /* ===== PRODUCT CARDS ===== */
@@ -225,20 +227,20 @@ body, html { font-family: 'DM Sans', sans-serif; color: var(--gtext); background
     <div class="accent-line"></div>
   </div>
   <div class="cat-grid">
-    <div class="cat-card">
-      <div class="cat-img" style="background: linear-gradient(135deg, #EBF0F7 0%, #D6E4F0 100%);"><div class="cat-img-label">Popular</div></div>
+    <div class="cat-card" onclick="window.location.href='catalogo.html'">
+      <div class="cat-img cat-slideshow" data-imgs="img/colchon-300x200x20.jpg,img/colchon-plegable-400.jpg,img/colchon-con-foam.jpg,img/colchon-viga.jpg,img/colchoneta-80kg.jpg"><div class="cat-img-label">Popular</div></div>
       <div class="cat-body"><h3>Colchones de caída y colchonetas</h3><p>De caída, plegables, quitamiedos y más. Múltiples densidades y medidas.</p><div class="cat-count">12 productos</div></div>
     </div>
-    <div class="cat-card">
-      <div class="cat-img" style="background: linear-gradient(135deg, #FFF3EC 0%, #FFE0CC 100%);"></div>
+    <div class="cat-card" onclick="window.location.href='catalogo.html'">
+      <div class="cat-img cat-slideshow" data-imgs="img/plano-inclinado-120.jpg,img/cilindros-30-50-80.jpg,img/pacman.jpg,img/puente.jpg,img/cubo-100.jpg,img/escalera.jpg"><div class="cat-img-label">Destacado</div></div>
       <div class="cat-body"><h3>Módulos de espuma</h3><p>Rampas, cilindros, cuñas y módulos para gimnasia artística y deportiva.</p><div class="cat-count">8 productos</div></div>
     </div>
-    <div class="cat-card">
-      <div class="cat-img" style="background: linear-gradient(135deg, #E8F8EE 0%, #C8EDDA 100%);"></div>
+    <div class="cat-card" onclick="window.location.href='catalogo.html'">
+      <div class="cat-img cat-slideshow" data-imgs="img/cajon-salto.jpg,img/mesa-salto.jpg"><div class="cat-img-label">Más vendido</div></div>
       <div class="cat-body"><h3>Cajones de salto</h3><p>Desmontables en 4 cuerpos. Espuma de alta densidad con gamuza sintética.</p><div class="cat-count">4 productos</div></div>
     </div>
-    <div class="cat-card">
-      <div class="cat-img" style="background: linear-gradient(135deg, #F5EEFF 0%, #E5D4FF 100%);"></div>
+    <div class="cat-card" onclick="window.location.href='catalogo.html'">
+      <div class="cat-img cat-slideshow" data-imgs="img/tamblinera-15x2.jpg,img/tamblinera-12x1.5.jpg,img/tamblinera-14x1.22.jpg,img/alfombra-10x1.5.jpg"><div class="cat-img-label">Nuevo</div></div>
       <div class="cat-body"><h3>Tamblineras y pistas</h3><p>Mini-trampolines y caminos de tumbling para entrenamiento.</p><div class="cat-count">3 productos</div></div>
     </div>
   </div>
@@ -501,6 +503,20 @@ body, html { font-family: 'DM Sans', sans-serif; color: var(--gtext); background
       if (currentScale === 1) { tx = 0; ty = 0; }
       applyZoom();
     });
+  });
+})();
+
+// Category slideshows
+(function() {
+  var slideshows = document.querySelectorAll('.cat-slideshow');
+  slideshows.forEach(function(el, idx) {
+    var imgs = el.getAttribute('data-imgs').split(',');
+    var current = 0;
+    el.style.backgroundImage = 'url(' + imgs[0] + ')';
+    setInterval(function() {
+      current = (current + 1) % imgs.length;
+      el.style.backgroundImage = 'url(' + imgs[current] + ')';
+    }, 2000 + (idx * 500));
   });
 })();
 </script>
