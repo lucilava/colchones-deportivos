@@ -292,7 +292,7 @@ body, html { font-family: 'DM Sans', sans-serif; color: var(--gtext); background
         <button class="mc-btn" id="zReset" style="font-size:11px;">R</button>
       </div>
       <div class="map-tt" id="tt"></div>
-      <svg id="mapCanvas" viewBox="0 0 600 700"></svg>
+      <svg id="mapCanvas" viewBox="0 0 600 480"></svg>
     </div>
     <div class="map-legend">
       <div class="legend-item"><div class="legend-dot" style="background:#E8662A;"></div> Argentina (entregas)</div>
@@ -387,15 +387,15 @@ body, html { font-family: 'DM Sans', sans-serif; color: var(--gtext); background
 
 // Map
 (function() {
-  var width = 600, height = 700;
+  var width = 600, height = 480;
   var svg = d3.select('#mapCanvas');
   var g = svg.append('g');
   var tt = document.getElementById('tt');
   var mapBox = document.querySelector('.map-box');
 
   var projection = d3.geoMercator()
-    .center([-63, -38])
-    .scale(750)
+    .center([-64, -38])
+    .scale(520)
     .translate([width / 2, height / 2]);
 
   var path = d3.geoPath().projection(projection);
@@ -417,10 +417,16 @@ body, html { font-family: 'DM Sans', sans-serif; color: var(--gtext); background
   var nameMap = { 32:'Argentina', 68:'Bolivia', 76:'Brazil', 152:'Chile', 170:'Colombia', 218:'Ecuador', 254:'French Guiana', 328:'Guyana', 600:'Paraguay', 604:'Peru', 740:'Suriname', 858:'Uruguay', 862:'Venezuela' };
   var saIds = [32, 68, 76, 152, 170, 218, 254, 328, 600, 604, 740, 858, 862];
 
-  d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json').then(function(world) {
+  Promise.all([
+      d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json'),
+      d3.json('https://cdn.jsdelivr.net/gh/codeforamerica/click_that_hood@master/public/data/argentina-provinces.geojson')
+    ]).then(function(data) {
+    var world = data[0];
+    var argProvinces = data[1];
     var countries = topojson.feature(world, world.objects.countries).features;
-    var southAm = countries.filter(function(f) { return saIds.indexOf(+f.id) !== -1; });
+    var southAm = countries.filter(function(f) { return saIds.indexOf(+f.id) !== -1 && +f.id !== 32; });
 
+    // Draw other South American countries first
     g.selectAll('path.country')
       .data(southAm)
       .enter().append('path')
@@ -428,16 +434,11 @@ body, html { font-family: 'DM Sans', sans-serif; color: var(--gtext); background
       .attr('d', path)
       .attr('fill', function(d) {
         var n = nameMap[+d.id] || '';
-        if (n === 'Argentina') return 'rgba(232,102,42,0.18)';
         if (limitrofes.indexOf(n) !== -1) return '#c8d6e5';
         return '#dde4ed';
       })
-      .attr('stroke', function(d) {
-        return nameMap[+d.id] === 'Argentina' ? '#E8662A' : '#b0bec5';
-      })
-      .attr('stroke-width', function(d) {
-        return nameMap[+d.id] === 'Argentina' ? 1.5 : 0.5;
-      })
+      .attr('stroke', '#b0bec5')
+      .attr('stroke-width', 0.5)
       .on('mouseenter', function(event, d) {
         var n = nameMap[+d.id] || '';
         if (!n) return;
@@ -450,6 +451,31 @@ body, html { font-family: 'DM Sans', sans-serif; color: var(--gtext); background
         tt.style.top = (event.clientY - rect.top) + 'px';
       })
       .on('mouseleave', function() { tt.style.opacity = '0'; });
+
+    // Draw Argentine provinces
+    g.selectAll('path.province')
+      .data(argProvinces.features)
+      .enter().append('path')
+      .attr('class', 'province')
+      .attr('d', path)
+      .attr('fill', 'rgba(232,102,42,0.15)')
+      .attr('stroke', '#E8662A')
+      .attr('stroke-width', 0.6)
+      .on('mouseenter', function(event, d) {
+        d3.select(this).attr('fill', 'rgba(232,102,42,0.35)');
+        var name = d.properties.name || d.properties.NAME || d.properties.provincia || '';
+        tt.innerHTML = '<div class="tt-name">' + name + '</div><div class="tt-detail">Argentina</div>';
+        tt.style.opacity = '1';
+      })
+      .on('mousemove', function(event) {
+        var rect = mapBox.getBoundingClientRect();
+        tt.style.left = (event.clientX - rect.left) + 'px';
+        tt.style.top = (event.clientY - rect.top) + 'px';
+      })
+      .on('mouseleave', function(event, d) {
+        d3.select(this).attr('fill', 'rgba(232,102,42,0.15)');
+        tt.style.opacity = '0';
+      });
 
     var pinG = g.selectAll('g.pin')
       .data(pins)
