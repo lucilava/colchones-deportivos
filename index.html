@@ -573,8 +573,7 @@ body, html { font-family: 'DM Sans', sans-serif; color: var(--gtext); background
 
 // Category slideshows
 (function() {
-  var slideshows = document.querySelectorAll('#igCarousel::-webkit-scrollbar { display: none; }
-.cat-slideshow');
+  var slideshows = document.querySelectorAll('.cat-slideshow');
   slideshows.forEach(function(el, idx) {
     var imgs = el.getAttribute('data-imgs').split(',');
     var current = 0;
