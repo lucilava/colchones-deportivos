@@ -279,32 +279,40 @@ body, html { font-family: 'DM Sans', sans-serif; color: var(--gtext); background
 
 
 <!-- ENTREGAS / INSTAGRAM -->
-<section class="section" style="background:var(--gneutral);padding-bottom:40px;">
+<section class="section" style="background:var(--gneutral);padding:48px 0 40px;">
   <div class="section-header">
     <h2>Entregas realizadas</h2>
     <p>Gimnasios, clubes y escuelas que ya equipamos en todo el país</p>
     <div class="accent-line"></div>
   </div>
-  <div style="position:relative;">
-    <div id="igCarousel" style="display:flex;gap:16px;overflow-x:auto;scroll-behavior:smooth;padding:0 40px 16px;-ms-overflow-style:none;scrollbar-width:none;">
-      <div style="min-width:320px;max-width:320px;"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/gimnasiaccva_/p/DVrm3G9jmov/" data-instgrm-version="14" style="width:100%;min-width:280px;"></blockquote></div>
-      <div style="min-width:320px;max-width:320px;"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/colchonesdeportivos/reel/DVD_8WpDQHQ/" data-instgrm-version="14" style="width:100%;min-width:280px;"></blockquote></div>
-      <div style="min-width:320px;max-width:320px;"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/colchonesdeportivos/reel/DUQkC0SDTMx/" data-instgrm-version="14" style="width:100%;min-width:280px;"></blockquote></div>
-      <div style="min-width:320px;max-width:320px;"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/colchonesdeportivos/reel/DUHBTAKEXyt/" data-instgrm-version="14" style="width:100%;min-width:280px;"></blockquote></div>
-      <div style="min-width:320px;max-width:320px;"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/colchonesdeportivos/p/DT9HUmpjfqd/" data-instgrm-version="14" style="width:100%;min-width:280px;"></blockquote></div>
-      <div style="min-width:320px;max-width:320px;"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/colchonesdeportivos/reel/DT8_pgQDaFj/" data-instgrm-version="14" style="width:100%;min-width:280px;"></blockquote></div>
-      <div style="min-width:320px;max-width:320px;"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/colchonesdeportivos/p/DTq9Dj0jbI3/" data-instgrm-version="14" style="width:100%;min-width:280px;"></blockquote></div>
-      <div style="min-width:320px;max-width:320px;"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/colchonesdeportivos/p/DPucBjWDVBm/" data-instgrm-version="14" style="width:100%;min-width:280px;"></blockquote></div>
-      <div style="min-width:320px;max-width:320px;"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/colchonesdeportivos/p/DPubaoSDdoh/" data-instgrm-version="14" style="width:100%;min-width:280px;"></blockquote></div>
-      <div style="min-width:320px;max-width:320px;"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/colchonesdeportivos/p/DJy_DItx28M/" data-instgrm-version="14" style="width:100%;min-width:280px;"></blockquote></div>
-      <div style="min-width:320px;max-width:320px;"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/artistica_dynamic/reel/DGS5KTxx-YY/" data-instgrm-version="14" style="width:100%;min-width:280px;"></blockquote></div>
-      <div style="min-width:320px;max-width:320px;"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/colchonesdeportivos/reel/DAW7PV1PoEO/" data-instgrm-version="14" style="width:100%;min-width:280px;"></blockquote></div>
+  <style>
+    .ig-carousel {display:flex;gap:16px;overflow-x:auto;scroll-behavior:smooth;padding:0 40px 16px;-ms-overflow-style:none;scrollbar-width:none;}
+    .ig-carousel::-webkit-scrollbar {display:none;}
+    .ig-card {min-width:320px;max-width:320px;height:440px;background:var(--gwhite);border-radius:10px;overflow:hidden;border:1px solid var(--gborder);flex-shrink:0;}
+    .ig-nav {position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;background:var(--gwhite);border:1px solid var(--gborder);cursor:pointer;font-size:18px;color:var(--gblue);display:flex;align-items:center;justify-content:center;z-index:2;transition:all 0.2s;box-shadow:0 2px 8px rgba(0,0,0,0.1);}
+    .ig-nav:hover {background:var(--gorange);color:#fff;border-color:var(--gorange);}
+  </style>
+  <div style="position:relative;margin-top:24px;">
+    <div class="ig-carousel" id="igCarousel">
+      <div class="ig-card"><iframe src="https://www.instagram.com/gimnasiaccva_/p/DVrm3G9jmov/embed/" frameborder="0" scrolling="no" allowtransparency="true" style="width:100%;height:100%;border:none;overflow:hidden;border-radius:8px;"></iframe></div>
+      <div class="ig-card"><iframe src="https://www.instagram.com/colchonesdeportivos/reel/DVD_8WpDQHQ/embed/" frameborder="0" scrolling="no" allowtransparency="true" style="width:100%;height:100%;border:none;overflow:hidden;border-radius:8px;"></iframe></div>
+      <div class="ig-card"><iframe src="https://www.instagram.com/colchonesdeportivos/reel/DUQkC0SDTMx/embed/" frameborder="0" scrolling="no" allowtransparency="true" style="width:100%;height:100%;border:none;overflow:hidden;border-radius:8px;"></iframe></div>
+      <div class="ig-card"><iframe src="https://www.instagram.com/colchonesdeportivos/reel/DUHBTAKEXyt/embed/" frameborder="0" scrolling="no" allowtransparency="true" style="width:100%;height:100%;border:none;overflow:hidden;border-radius:8px;"></iframe></div>
+      <div class="ig-card"><iframe src="https://www.instagram.com/colchonesdeportivos/p/DT9HUmpjfqd/embed/" frameborder="0" scrolling="no" allowtransparency="true" style="width:100%;height:100%;border:none;overflow:hidden;border-radius:8px;"></iframe></div>
+      <div class="ig-card"><iframe src="https://www.instagram.com/colchonesdeportivos/reel/DT8_pgQDaFj/embed/" frameborder="0" scrolling="no" allowtransparency="true" style="width:100%;height:100%;border:none;overflow:hidden;border-radius:8px;"></iframe></div>
+      <div class="ig-card"><iframe src="https://www.instagram.com/colchonesdeportivos/p/DTq9Dj0jbI3/embed/" frameborder="0" scrolling="no" allowtransparency="true" style="width:100%;height:100%;border:none;overflow:hidden;border-radius:8px;"></iframe></div>
+      <div class="ig-card"><iframe src="https://www.instagram.com/colchonesdeportivos/p/DPucBjWDVBm/embed/" frameborder="0" scrolling="no" allowtransparency="true" style="width:100%;height:100%;border:none;overflow:hidden;border-radius:8px;"></iframe></div>
+      <div class="ig-card"><iframe src="https://www.instagram.com/colchonesdeportivos/p/DPubaoSDdoh/embed/" frameborder="0" scrolling="no" allowtransparency="true" style="width:100%;height:100%;border:none;overflow:hidden;border-radius:8px;"></iframe></div>
+      <div class="ig-card"><iframe src="https://www.instagram.com/colchonesdeportivos/p/DJy_DItx28M/embed/" frameborder="0" scrolling="no" allowtransparency="true" style="width:100%;height:100%;border:none;overflow:hidden;border-radius:8px;"></iframe></div>
+      <div class="ig-card"><iframe src="https://www.instagram.com/artistica_dynamic/reel/DGS5KTxx-YY/embed/" frameborder="0" scrolling="no" allowtransparency="true" style="width:100%;height:100%;border:none;overflow:hidden;border-radius:8px;"></iframe></div>
+      <div class="ig-card"><iframe src="https://www.instagram.com/colchonesdeportivos/reel/DAW7PV1PoEO/embed/" frameborder="0" scrolling="no" allowtransparency="true" style="width:100%;height:100%;border:none;overflow:hidden;border-radius:8px;"></iframe></div>
+      
     </div>
-    <button onclick="document.getElementById('igCarousel').scrollBy({left:-340,behavior:'smooth'})" style="position:absolute;left:8px;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;background:var(--gwhite);border:1px solid var(--gborder);cursor:pointer;font-size:18px;color:var(--gblue);display:flex;align-items:center;justify-content:center;z-index:2;">&larr;</button>
-    <button onclick="document.getElementById('igCarousel').scrollBy({left:340,behavior:'smooth'})" style="position:absolute;right:8px;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;background:var(--gwhite);border:1px solid var(--gborder);cursor:pointer;font-size:18px;color:var(--gblue);display:flex;align-items:center;justify-content:center;z-index:2;">&rarr;</button>
+    <button class="ig-nav" style="left:8px;" onclick="document.getElementById('igCarousel').scrollBy({left:-340,behavior:'smooth'})">&larr;</button>
+    <button class="ig-nav" style="right:8px;" onclick="document.getElementById('igCarousel').scrollBy({left:340,behavior:'smooth'})">&rarr;</button>
   </div>
-  <div style="text-align:center;margin-top:16px;">
-    <a href="https://www.instagram.com/colchonesdeportivos/" target="_blank" style="display:inline-flex;align-items:center;gap:8px;color:var(--gorange);font-weight:700;font-size:14px;text-decoration:none;">Ver más en Instagram &rarr;</a>
+  <div style="text-align:center;margin-top:20px;">
+    <a href="https://www.instagram.com/colchonesdeportivos/" target="_blank" style="display:inline-flex;align-items:center;gap:8px;color:var(--gorange);font-weight:700;font-size:14px;text-decoration:none;transition:opacity 0.2s;">Seguinos en Instagram &rarr;</a>
   </div>
 </section>
 
